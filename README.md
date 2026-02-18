@@ -1,3 +1,27 @@
+# 2026-02-18
+
+⚠️ **Repository Archived**
+
+Unfortunately, the [current Dockerfile is no longer building](https://github.com/nexusforge/unifi-docker/actions/runs/21902853568/job/63235339364). 
+
+Recent versions (10.1.84+) of UniFi Network now require OpenJDK 25, which isn't available on Ubuntu 20.04 (the base image used here).
+
+Updating the base image would also require upgrading MongoDB, which could introduce compatibility issues with existing installations and i don't want to break any existing setups.
+
+I've explored a few possible workarounds, but with UniFi OS becoming the standard, it doesn't seem worth the effort to keep patching this setup.
+
+👉 **What you can do**
+
+The easiest path forward is:
+
+* Back up your current UniFi installation.
+
+* Restore it on a newer UniFi Network version that includes an updated MongoDB.
+
+Personally, I’ve moved over to [goofball222/unifi](https://github.com/goofball222/unifi), which is actively maintained and a solid alternative.
+
+Thanks to everyone who has used this project and I hope this project was helpful while it lasted!
+
 # Unifi-in-Docker (unifi-docker)
 
 This repo contains a Dockerized version of [Ubiqiti Network's](https://www.ubnt.com/) Unifi Controller.
